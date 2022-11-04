@@ -1,2 +1,0 @@
-# hangman
-react-typescript project
