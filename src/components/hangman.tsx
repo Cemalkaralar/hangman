@@ -1,40 +1,54 @@
+
 import React from "react";
 
+type AppProps={
+  headVisible:'hidden' | 'visible'
+  bodyVisible:'hidden' | 'visible'
+  armLeftVisible:'hidden' | 'visible'
+  armRightVisible:'hidden' | 'visible'
+  legLeftVisible:'hidden' | 'visible'
+  legRightVisible:'hidden' | 'visible'
+  chairVisible:'hidden' | 'visible'
+}
 
-class Hangman extends React.Component {
 
+class Hangman extends React.Component<AppProps> {
 
-    constructor(props:string) {
+    constructor(props: AppProps) {
         super(props);
         this.state={
            
         }
       
-      
       }
 
     render() {
-        let styles:string = {
+
+
+      type Styles={
+        [key :string]:React.CSSProperties
+      }
+        const styles:Styles = {
             head: {
-                visibility: 'hidden'
+                visibility: this.props.headVisible
             },
             body: {
-                visibility: 'hidden'
+                visibility: this.props.bodyVisible
             },
             armLeft: {
-                visibility: 'hidden'
+                visibility: this.props.armLeftVisible
             },
               armRight: {
-                visibility: 'hidden'
+                visibility: this.props.armRightVisible
             },
             legLeft: {
-                visibility: 'hidden'
+                visibility: this.props.legLeftVisible
             },
             legRight: {
-                visibility: 'hidden'
+                visibility: this.props.legRightVisible
             },
             chair: {
-                visibility: 'hidden'
+                visibility: this.props.chairVisible
             },
           };
         return (
